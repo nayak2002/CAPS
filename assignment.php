@@ -89,3 +89,5 @@ if($_SESSION['utype'] != "mentor"){
 
 
 </html>
+
+<?php require_once('include/footer.php');?>
