@@ -46,6 +46,9 @@ $rowcount = mysqli_num_rows($result);
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="assets/css/ionicons.min.css">
   <link rel="stylesheet" href="assets/css/footerstyle.css">
+  <link rel="stylesheet" type="text/css" href="./Slider/carouselstyle.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.css">
   <script src="https://code.iconify.design/3/3.0.0/iconify.min.js"></script>
 
 
@@ -63,6 +66,34 @@ $rowcount = mysqli_num_rows($result);
 
   <div class="alert alert-success" style="text-align:center;" role="alert">
     Welcome <?php echo $_SESSION['name'];?>! You are now logged in to volunteer portal.
+</div>
+
+<div class="carousel-main">
+<div class="hero-slider" data-carousel>
+	<div class="carousel-cell" style="background-image: url(https://christuniversity.in/images/denery-banner1.jpg);">
+		<div class="overlay"></div>
+		<div class="inner">
+			<h2 class="title">Artifex '22</h2>
+			<a href="https://christuniversity.in/events/Main%20Campus/view-pdf/artifex-2022-flagship-event-of-caps" class="btn">Learn More</a>
+		</div>
+	</div>
+
+	<div class="carousel-cell" style="background-image: url(https://christuniversity.in/uploads/campus/large/231781473_2020-11-11_03-22-25.jpg);">
+		<div class="overlay"></div>
+		<div class="inner">
+			<h2 class="title">Our Website</h2>
+			<a href="https://caps.christuniversity.in/" class="btn">Learn More</a>
+		</div>
+	</div>
+
+	<div class="carousel-cell" style="background-image: url(https://ncr.christuniversity.in/uploads/course/medium/484245266_2021-01-06_12-19-57.jpg);">
+		<div class="overlay"></div>
+		<div class="inner">
+			<h2 class="title">Our Mentors</h2>
+			<a href="https://caps.christuniversity.in/our-family/mentors" class="btn">Learn More</a>
+		</div>
+	</div>
+</div>
 </div>
 <div class="maintitle">
   <h1 class="my-5" style="font-weight: 500;">Upcoming Events</h1> 
@@ -129,12 +160,15 @@ $rowcount = mysqli_num_rows($result);
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.sticky.js"></script>
   <script src="js/main.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
+  <script type="text/javascript" src="./Slider/script.js"></script>
 </body>
 
 </html>
 
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700&display=swap" rel="stylesheet">
+
 
 <link rel="stylesheet" href="./assets/css/css/ionicons.min.css">
 <link rel="stylesheet" href="./assets/css/footstyle.css">
