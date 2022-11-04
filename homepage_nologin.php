@@ -40,6 +40,12 @@ require_once('include/navbar.php');
     Seems like you haven't logged in yet! <a href="./login.php">Click here</a> to log in your CAPS account
   </div>
 
+  <div class="nologin">
+    <center>
+    <img src="./assets/images/nologin.jpg" width="500px" alt="" srcset="">
+    </center>
+  </div>
+
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
