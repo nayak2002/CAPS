@@ -70,31 +70,25 @@ $rowcount = mysqli_num_rows($result);
     Welcome <?php echo $_SESSION['name'];?>! You are now logged in to volunteer portal.
 </div>
 
+
+
 <div class="carousel-main">
 <div class="hero-slider" data-carousel>
-	<div class="carousel-cell" style="background-image: url(https://christuniversity.in/images/denery-banner1.jpg);">
-		<div class="overlay"></div>
-		<div class="inner">
-			<h2 class="title">Artifex '22</h2>
-			<a href="https://christuniversity.in/events/Main%20Campus/view-pdf/artifex-2022-flagship-event-of-caps" class="btn">Learn More</a>
-		</div>
-	</div>
+<?php 
 
-	<div class="carousel-cell" style="background-image: url(https://christuniversity.in/uploads/campus/large/231781473_2020-11-11_03-22-25.jpg);">
-		<div class="overlay"></div>
-		<div class="inner">
-			<h2 class="title">Our Website</h2>
-			<a href="https://caps.christuniversity.in/" class="btn">Learn More</a>
-		</div>
-	</div>
-
-	<div class="carousel-cell" style="background-image: url(https://ncr.christuniversity.in/uploads/course/medium/484245266_2021-01-06_12-19-57.jpg);">
-		<div class="overlay"></div>
-		<div class="inner">
-			<h2 class="title">Our Mentors</h2>
-			<a href="https://caps.christuniversity.in/our-family/mentors" class="btn">Learn More</a>
-		</div>
-	</div>
+$hero_sql = "SELECT * FROM homepage_hero_data";
+$hero_result = mysqli_query($link, $hero_sql);  
+while($hero_row=$hero_result->fetch_assoc()){
+  echo "<div class='carousel-cell' style='background-image: url(".$hero_row['image_url'].");'>
+  <div class='overlay'></div>
+  <div class='inner'>
+    <h2 class='title'>".$hero_row['title']."</h2>
+    <a href=".$hero_row['link']." class='btn'>Learn More</a>
+  </div>
+</div>
+";
+}
+?>
 </div>
 </div>
 <div class="maintitle">
