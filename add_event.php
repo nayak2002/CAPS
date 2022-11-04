@@ -66,7 +66,7 @@ if ($_SESSION['login'] != "true") {
     <div class="container">
       <div class="signup-content">
         <div class="signup-img">
-          <img src="IMG_9414.jpg" alt="" />
+          <img src="./assets/images/event_creation.jpg" alt="" />
         </div>
         <div class="signup-form">
           <form method="POST" action="add_event.php" class="register-form" id="register-form">
