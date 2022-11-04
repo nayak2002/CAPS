@@ -1,6 +1,8 @@
 <?php session_start();
-require_once('delete_event.php');
+
 require_once('include/navbar.php');
+require_once('./database/config.php');
+require_once('delete_event.php');
 if ($_SESSION['login'] != "true") {
   header('Location:./homepage_nologin.php');
   exit();
@@ -22,7 +24,7 @@ else {
 
 <?php
 
-require_once('./database/config.php');
+
 $sql = "SELECT * FROM events";
 $result = mysqli_query($link, $sql);  
 $rowcount = mysqli_num_rows($result);
