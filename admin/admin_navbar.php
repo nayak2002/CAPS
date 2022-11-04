@@ -18,7 +18,7 @@ if (isset($_SESSION['regno'])) {
 
 
     <div class="site-logo">
-      <a href="homepage.php"><img src="../assets/images/newcaps.png" alt="logo" class="logo" style="width:30vh;">
+      <a href="../homepage.php"><img src="../assets/images/newcaps.png" alt="logo" class="logo" style="width:30vh;">
     </div>
 
     <div class="col-12">
