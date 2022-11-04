@@ -14,9 +14,9 @@ if ($_SESSION['login'] != "true") {
   }
   else{
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $ename = $_POST['ename'];
-      $venue = $_POST['venue'];
-      $desc = $_POST['desc'];
+      $ename = mysqli_real_escape_string($link, $_POST['ename']);
+      $venue = mysqli_real_escape_string($link, $_POST['venue']);
+      $desc = mysqli_real_escape_string($link, $_POST['desc']);
       $sdate = $_POST['start_date'];
       $stime = $_POST['start_time'];
       $edate = $_POST['end_date'];
@@ -24,7 +24,8 @@ if ($_SESSION['login'] != "true") {
       $campus = $_POST['campus'];
       $dept = $_POST['dept'];
 
-      $query = "INSERT INTO `events`(`event_title`, `event_desc`, `start_time`, `start_date`, `end_time`, `end_date`,`campus`, `dept`, `venue`) VALUES ('".$ename ."','".$desc."','".$stime."','".$sdate."','".$etime."','".$edate."','".$campus."','".$dept."','".$venue."')";
+      $query = "INSERT INTO events(event_title,event_desc,start_time,start_date, end_time,end_date,campus, dept, venue) VALUES ('".$ename ."','".$desc."','".$stime."','".$sdate."','".$etime."','".$edate."','".$campus."','".$dept."','".$venue."')";
+      echo $query;
       $result = mysqli_query($link, $query);
         if ($result) {
           echo "Success";
