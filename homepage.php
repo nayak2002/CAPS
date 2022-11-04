@@ -1,5 +1,5 @@
 <?php session_start();
-
+require_once('delete_event.php');
 require_once('include/navbar.php');
 if ($_SESSION['login'] != "true") {
   header('Location:./homepage_nologin.php');
