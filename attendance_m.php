@@ -7,7 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userlist_sql = $link->query("SELECT * FROM user_data where user_type='VOLUNTEER'");
         while ($volunteers_row = $userlist_sql->fetch_assoc()) {
             $choice = $_POST['btnradio-' . $volunteers_row['regno'] . ''];
-            $attendance_sql = "INSERT INTO `attendance` (`regno`, `student_name`, `event_name`, `date`, `eventid`, `attendance_status`, `time`) VALUES ('" . $volunteers_row['regno'] . "', '" . $volunteers_row['first_name'] . "', '" . $ename_row['event_title'] . "', '" . date("Y/m/d") . "', '" . $ename_row['ID'] . "', '" . $choice . "','" . date("h:i:sa") . "')";
+            $attendance_sql = "INSERT INTO `sql12542208`.`attendance` (`regno`, `student_name`, `event_name`, `date`, `eventid`, `attendance_status`, `time`) VALUES ('" . $volunteers_row['regno'] . "', '" . $volunteers_row['first_name'] . "', '" . $ename_row['event_title'] . "', '" . date("Y/m/d") . "', '" . $ename_row['ID'] . "', '" . $choice . "','" . date("h:i:sa") . "')";
+            echo "<script>console.log('".$attendance_sql."');</script>";
             $attendance_result = $link->query($attendance_sql);
             if ($attendance_result) {
                 $attendance_result = $link->query("UPDATE `sql12542208`.`events` SET `attendance_taken` = '1' WHERE (`ID` = '" . $ename_row['ID'] . "');");
