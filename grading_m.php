@@ -14,7 +14,7 @@ if ($_SESSION['login'] != "true") {
         }
       }
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if ($path_result = $link->query("UPDATE workdiaryentry SET grade=" . $_POST['grade'] . " WHERE regno=" . $reg . " and ID=" . $eid . "")) {
+        if ($path_result = $link->query("UPDATE `sql12542208`.`workdiaryentry` SET grade=" . $_POST['grade'] . " WHERE regno=" . $reg . " and ID=" . $eid . "")) {
           header("location:assignment.php");
         }
       }

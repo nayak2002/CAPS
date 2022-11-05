@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $attendance_sql = "INSERT INTO `attendance` (`regno`, `student_name`, `event_name`, `date`, `eventid`, `attendance_status`, `time`) VALUES ('" . $volunteers_row['regno'] . "', '" . $volunteers_row['first_name'] . "', '" . $ename_row['event_title'] . "', '" . date("Y/m/d") . "', '" . $ename_row['ID'] . "', '" . $choice . "','" . date("h:i:sa") . "')";
             $attendance_result = $link->query($attendance_sql);
             if ($attendance_result) {
-                $attendance_result = $link->query("UPDATE `caps_data`.`events` SET `attendance_taken` = '1' WHERE (`ID` = '" . $ename_row['ID'] . "');");
+                $attendance_result = $link->query("UPDATE `sql12542208`.`events` SET `attendance_taken` = '1' WHERE (`ID` = '" . $ename_row['ID'] . "');");
             }
         }
     }
