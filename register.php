@@ -72,11 +72,13 @@ if (isset($_SESSION['login'])=="true") {
                 VALUES('$regno','VOLUNTEER', '$fname', '$lname', '$email', '$hash', '$wing')";
         mysqli_query($link, $query);
         
-
+        $_SESSION['regno']=$regno;
         $_SESSION['name'] = $fname;
         $_SESSION['login']="true";
         $_SESSION['utype']="volunteer";
         $_SESSION['fname'] = $fname;
+        $_SESSION['committee']=$_POST["wing"];
+        
         header('location: homepage.php');
 
         
