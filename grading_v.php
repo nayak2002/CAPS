@@ -41,7 +41,7 @@ if ($_SESSION['login'] != "true") {
     $grade = $grade+1;
   }
   else{
-
+    $atmark=0;
   }
 
   $event_count_row = $result = $link->query("SELECT count(event_title) FROM `events` where attendance_taken=1")->fetch_assoc();
