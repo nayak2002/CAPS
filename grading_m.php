@@ -16,6 +16,7 @@ if ($_SESSION['login'] != "true") {
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($path_result = $link->query("UPDATE `sql12542208`.`workdiaryentry` SET grade=" . $_POST['grade'] . " WHERE regno=" . $reg . " and ID=" . $eid . "")) {
           header("location:assignment.php");
+
         }
       }
     }
@@ -51,6 +52,7 @@ if ($_SESSION['login'] != "true") {
       </div>
       <div class="row mt-2">
         <div class="col-sm">
+          <label for="grade">Enter grade for this assignment (out of 10)</label>
           <input class="mt-3" type="text" name="grade" style="width:5rem;text-align:center;" /><br>
           <button name="submit" type="submit" class="btn btn-primary mt-2" style="background-color:#007bff;">Submit</button>
         </div>
