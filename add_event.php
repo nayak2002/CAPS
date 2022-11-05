@@ -70,7 +70,7 @@ if ($_SESSION['login'] != "true") {
         </div>
         <div class="signup-form">
           <form method="POST" action="add_event.php" class="register-form" id="register-form">
-            <h2>STEMS - Event creation form</h2>
+            <h2>CAPS - Event creation form</h2>
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Event Name :</label>
