@@ -44,7 +44,7 @@ if ($_SESSION['login'] != "true") {
 
   }
 
-  $event_count_row = $result = $link->query("SELECT count(event_title) FROM `events`")->fetch_assoc();
+  $event_count_row = $result = $link->query("SELECT count(event_title) FROM `events` where attendance_taken=1")->fetch_assoc();
   $event_count = $event_count_row['count(event_title)'];
   $total = ($event_count*10)+5;
 }
