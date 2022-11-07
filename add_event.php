@@ -1,5 +1,5 @@
 <?php
-
+y
 require_once('include/navbar.php');
 require_once('database/config.php');
 // Initialize the session
