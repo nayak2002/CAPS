@@ -35,9 +35,9 @@
                         <tr>
                             <th>#</th>
                             <th>Event Name</th>
-                            <th>Event Date</th>
-                            <th>Event Time</th>
-                            <th>Attendance</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <!--Table head-->

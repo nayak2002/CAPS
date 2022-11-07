@@ -49,7 +49,6 @@ if (isset($_SESSION['login'])=="true") {
     }  
     else  
     {
-      echo "alert(''.$email.'');";  
       $login_err = "Email doesn't exist! Want to <a style='color:#721c24;' href='./register.php'><b>register</b></a>?";
     }
   }

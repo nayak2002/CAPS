@@ -17,7 +17,7 @@
   while ($row = mysqli_fetch_array($fetch)){
     echo '<table class="table table-striped" style="width:60%;" align="center">
     <thead>
-    <caption style="text-align: center;caption-side: top;font-size: 1.25rem;color:black;">'.$row['event_title'].'</caption>
+    <caption class="font-weight-bold" style="text-align: center;caption-side: top;font-size: 1.25rem;color:black;">'.$row['event_title'].'</caption>
     <tr>
       <th>#</th>
       <th>Register Number</th>
@@ -53,5 +53,6 @@
     ';
     $count=$count+1;
   }
+  echo'<hr>';
   }
 ?>
