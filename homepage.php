@@ -6,18 +6,14 @@ require_once('delete_event.php');
 if ($_SESSION['login'] != "true") {
   header('Location:./homepage_nologin.php');
   exit();
-}
-else {
+} else {
   if ($_SESSION['utype'] == 'mentor') {
     header('Location:./mentor_homepage.php');
     exit();
-  } 
-  elseif($_SESSION['utype'] == 'confirm_due') {
+  } elseif ($_SESSION['utype'] == 'confirm_due') {
     header('Location:./homepage_nomentor.php');
     exit();
-  }
-  else{
-    
+  } else {
   }
 }
 ?>
@@ -26,7 +22,7 @@ else {
 
 
 $sql = "SELECT * FROM events";
-$result = mysqli_query($link, $sql);  
+$result = mysqli_query($link, $sql);
 $rowcount = mysqli_num_rows($result);
 
 ?>
@@ -49,8 +45,8 @@ $rowcount = mysqli_num_rows($result);
   <link rel="stylesheet" href="assets/css/ionicons.min.css">
   <link rel="stylesheet" href="assets/css/footerstyle.css">
   <link rel="stylesheet" type="text/css" href="./Slider/carouselstyle.css">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.css">
   <script src="https://code.iconify.design/3/3.0.0/iconify.min.js"></script>
 
 
@@ -67,45 +63,45 @@ $rowcount = mysqli_num_rows($result);
 
 
   <div class="alert alert-success" style="text-align:center;" role="alert">
-    Welcome <?php echo $_SESSION['name'];?>! You are now logged in to volunteer portal.
-</div>
+    Welcome <?php echo $_SESSION['name']; ?>! You are now logged in to volunteer portal.
+  </div>
 
 
 
-<div class="carousel-main">
-<div class="hero-slider" data-carousel>
-<?php 
+  <div class="carousel-main">
+    <div class="hero-slider" data-carousel>
+      <?php
 
-$hero_sql = "SELECT * FROM homepage_hero_data";
-$hero_result = mysqli_query($link, $hero_sql);  
-while($hero_row=$hero_result->fetch_assoc()){
-  echo "<div class='carousel-cell' style='background-image: url(".$hero_row['image_url'].");'>
+      $hero_sql = "SELECT * FROM homepage_hero_data";
+      $hero_result = mysqli_query($link, $hero_sql);
+      while ($hero_row = $hero_result->fetch_assoc()) {
+        echo "<div class='carousel-cell' style='background-image: url(" . $hero_row['image_url'] . ");'>
   <div class='overlay'></div>
   <div class='inner'>
-    <h2 class='title'>".$hero_row['title']."</h2>
-    <a href=".$hero_row['link']." class='btn'>Learn More</a>
+    <h2 class='title'>" . $hero_row['title'] . "</h2>
+    <a href=" . $hero_row['link'] . " class='btn'>Learn More</a>
   </div>
 </div>
 ";
-}
-?>
-</div>
-</div>
-<div class="maintitle">
-  <h1 class="my-5" style="font-weight: 500;">Upcoming Events</h1> 
+      }
+      ?>
+    </div>
+  </div>
+  <div class="maintitle">
+    <h1 class="my-5" style="font-weight: 500;">Upcoming Events</h1>
   </div>
 
-    <?php
-    while($rowcount=$result->fetch_assoc()){
-      $start_month = date('F', strtotime($rowcount['start_date']));
-      $end_month = date('F', strtotime($rowcount['end_date']));
-      $e_title= $rowcount['event_title'];
-      $start_date= date('d', strtotime($rowcount['start_date']));
-      $end_date= date('d', strtotime($rowcount['end_date']));
-      $e_desc= $rowcount['event_desc'];
-      $start_time=$rowcount['start_time'];
-      $end_time=$rowcount['end_time'];
-      echo "
+  <?php
+  while ($rowcount = $result->fetch_assoc()) {
+    $start_month = date('F', strtotime($rowcount['start_date']));
+    $end_month = date('F', strtotime($rowcount['end_date']));
+    $e_title = $rowcount['event_title'];
+    $start_date = date('d', strtotime($rowcount['start_date']));
+    $end_date = date('d', strtotime($rowcount['end_date']));
+    $e_desc = $rowcount['event_desc'];
+    $start_time = $rowcount['start_time'];
+    $end_time = $rowcount['end_time'];
+    echo "
     <div class='event-container'>
       <div class='event'>
         <div class='event-left'>
@@ -125,29 +121,18 @@ while($hero_row=$hero_result->fetch_assoc()){
 
           <div class='event-timing'>
           <span class='iconify mr-1' data-icon='ant-design:clock-circle-filled'></span>
-          <span>".$start_date." ".$start_month." ".$start_time." - ".$end_date." ".$end_month." ".$end_time." </span>
+          <span>" . $start_date . " " . $start_month . " " . $start_time . " - " . $end_date . " " . $end_month . " " . $end_time . " </span>
           </div>
         </div>
       </div>
 
     </div>
     ";
-    }
-    ?>
+  }
+  ?>
 
-    
-    <div class="container2">
-    <footer class="py-3 my-4">
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-      </ul>
-      <p class="text-center text-muted">CAPS 2022</p>
-    </footer>
-  </div>
+
+  <?php require_once('./include/footer.php'); ?>
   <div class="hero" style="background-image: url('images/hero_1.jpg');"></div>
 
 

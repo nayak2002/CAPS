@@ -54,6 +54,7 @@ require_once('include/navbar.php');
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/main.js"></script>
+    <hr>
     <?php require_once('./include/footer.php'); ?>
 </body>
 

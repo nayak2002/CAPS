@@ -48,4 +48,5 @@ if ($_SESSION['login'] !="true") {
         ?>
 </body>
 </html>
+<hr>
 <?php require_once('include/footer.php');?>
